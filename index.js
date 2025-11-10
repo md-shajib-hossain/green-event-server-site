@@ -36,11 +36,20 @@ async function run() {
     const db = client.db("events_db");
     const eventsCollection = db.collection("events");
 
-    //
+    // get api
     app.get("/events", async (req, res) => {
-      const result = await eventsCollection.find().limit(2).toArray();
+      const result = await eventsCollection.find().sort({ date: 1 }).toArray();
       res.send(result);
     });
+
+    // post api
+    app.post("/events", async (req, res) => {
+      const data = req.body;
+      console.log(data);
+      const result = await eventsCollection.insertOne(data);
+      res.send(result);
+    });
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
