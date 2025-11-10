@@ -1,0 +1,137 @@
+[
+  {
+    "title": "Halishahar Beach Cleanup Drive",
+    "description": "Join us to clean the Halishahar beach and protect marine life. Bring gloves and enthusiasm!",
+    "type": "Cleanup",
+    "thumbnail": "https://www.newsbharati.com/Encyc/2022/6/17/Beachcleanup_202206171206554911_H@@IGHT_0_W@@IDTH_600.jpg",
+    "location": "Halishahar Beach, Chittagong",
+    "date": "2025-12-15T10:00:00.000Z",
+    "creatorEmail": "admin@greenctg.com"
+  },
+  {
+    "title": "Tree Plantation at CRB Hills",
+    "description": "Plant 500 saplings at CRB Hills to restore green cover. Free saplings provided.",
+    "type": "Plantation",
+    "thumbnail": "https://tse4.mm.bing.net/th/id/OIP.XlS8Az3SuAMMzr_cn8_n5wHaDq?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "location": "CRB Hills, Chittagong",
+    "date": "2025-12-20T09:00:00.000Z",
+    "creatorEmail": "volunteer1@greenctg.com"
+  },
+  {
+    "title": "Winter Blanket Donation Camp",
+    "description": "Donate blankets, warm clothes for underprivileged families in Chittagong.",
+    "type": "Donation",
+    "thumbnail": "https://tse1.mm.bing.net/th/id/OIP.A6TKRqjlOszt2tq-Y69psAHaEK?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "location": "Agrabad Community Center, Chittagong",
+    "date": "2025-12-25T11:00:00.000Z",
+    "creatorEmail": "ngo@ctghelp.org"
+  },
+  {
+    "title": "Free Health Checkup Camp",
+    "description": "Free BP, sugar, and eye checkup for local residents. Doctors on site.",
+    "type": "Health",
+    "thumbnail": "https://s3-us-west-2.amazonaws.com/issuewireassets/primg/129453/free-health-checkup-camp1579205024.jpeg",
+    "location": "Pahartali Bazar, Chittagong",
+    "date": "2026-01-05T08:00:00.000Z",
+    "creatorEmail": "healthteam@ctg.org"
+  },
+  {
+    "title": "Riverbank Cleanup - Karnaphuli",
+    "description": "Massive cleanup along Karnaphuli riverbank. Let's save our lifeline!",
+    "type": "Cleanup",
+    "thumbnail": "https://www.tbsnews.net/sites/default/files/styles/infograph/public/images/2022/02/20/chattogram_karnafuli_river_1.jpg?itok=FX3VbGRd&timestamp=1645330493",
+    "location": "Karnaphuli Riverbank, Kalurghat",
+    "date": "2026-01-12T07:30:00.000Z",
+    "creatorEmail": "eco@ctg.com"
+  },
+  {
+    "title": "Mango Tree Plantation Drive",
+    "description": "Plant 300 mango saplings in local schools and parks.",
+    "type": "Plantation",
+    "thumbnail": "https://img.freepik.com/premium-photo/beautiful-mango-orchard-plantation_955834-1223.jpg?w=2000",
+    "location": "Chittagong Government Girls High School",
+    "date": "2026-01-18T10:00:00.000Z",
+    "creatorEmail": "schoolgreen@edu.ctg"
+  },
+  {
+    "title": "Blood Donation Camp",
+    "description": "Donate blood, save lives. All blood groups needed.",
+    "type": "Donation",
+    "thumbnail": "https://www.sakshamgroup.in/Assets/images/media/bloodDonation/4.jpg",
+    "location": "Chittagong Medical College Hospital",
+    "date": "2026-01-22T09:00:00.000Z",
+    "creatorEmail": "redcross@ctg.org"
+  },
+  {
+    "title": "Digital Literacy Workshop",
+    "description": "Free training on computer basics and internet safety for students.",
+    "type": "Education",
+    "thumbnail": "https://www.cidrz.org/wp-content/uploads/2023/03/2-Digital-Literacy-images-at-11.59.11-AM-2.jpeg",
+    "location": "Patiya Public Library, Chittagong",
+    "date": "2026-01-28T14:00:00.000Z",
+    "creatorEmail": "techlearn@ctg.edu"
+  },
+  {
+    "title": "Park Cleanup - Foy's Lake",
+    "description": "Clean Foy's Lake park area and promote eco-tourism.",
+    "type": "Cleanup",
+    "thumbnail": "https://res.cloudinary.com/graham-media-group/image/upload/f_auto/q_auto/c_thumb,w_700/v1/media/gmg/Y2ZAZT2TQFBENPS2HYZB2OFSZ4.jpg?_a=DATAdtfiZAA0",
+    "location": "Foy's Lake, Chittagong",
+    "date": "2026-02-02T08:00:00.000Z",
+    "creatorEmail": "lakegreen@ctg.com"
+  },
+  {
+    "title": "Medicinal Plant Garden",
+    "description": "Create a community medicinal plant garden with local herbs.",
+    "type": "Plantation",
+    "thumbnail": "https://www.naturallivingideas.com/wp-content/uploads/2015/11/medicinal-herb-garden.jpg",
+    "location": "Anwara Upazila Health Complex",
+    "date": "2026-02-08T10:30:00.000Z",
+    "creatorEmail": "herbal@health.ctg"
+  },
+  {
+    "title": "Old Clothes Collection Drive",
+    "description": "Donate usable old clothes for winter distribution.",
+    "type": "Donation",
+    "thumbnail": "https://th.bing.com/th/id/R.c19c21c05ce87c4aabb24d637cbd08c6?rik=7uEqMvKKXs3m5A&pid=ImgRaw&r=0",
+    "location": "New Market, Chittagong",
+    "date": "2026-02-14T11:00:00.000Z",
+    "creatorEmail": "clothbank@ctg.org"
+  },
+  {
+    "title": "Eye Care Awareness Seminar",
+    "description": "Learn about eye health, free glasses for needy children.",
+    "type": "Awareness",
+    "thumbnail": "https://ecdn.dhakatribune.net/contents/cache/images/1200x630x1/uploads/media/2023/10/12/DT-843c6cf0d807a16174b66b1a08b57c7b.jpg",
+    "location": "Chittagong Eye Hospital",
+    "date": "2026-02-20T15:00:00.000Z",
+    "creatorEmail": "vision@ctghealth.org"
+  },
+  {
+    "title": "Roadside Tree Plantation",
+    "description": "Plant trees along Chittagong-Cox's Bazar highway.",
+    "type": "Plantation",
+    "thumbnail": "https://cdn.assunnahfoundation.org/home/tree-plantation-2023.jpg",
+    "location": "Sitakunda Highway, Chittagong",
+    "date": "2026-02-25T07:00:00.000Z",
+    "creatorEmail": "roadgreen@ctg.gov"
+  },
+  {
+    "title": "Waste Segregation Workshop",
+    "description": "Learn how to segregate waste at home for better recycling.",
+    "type": "Education",
+    "thumbnail": "https://tse2.mm.bing.net/th/id/OIP.Co2IueOWTt2p8sdwxHYflwHaEr?cb=ucfimgc2&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "location": "Khulshi Community Hall, Chittagong",
+    "date": "2026-03-01T16:00:00.000Z",
+    "creatorEmail": "wastewise@ctg.org"
+  },
+  {
+    "title": "Food Donation for Orphanage",
+    "description": "Cook and serve meals for 200 children at local orphanage.",
+    "type": "Donation",
+    "thumbnail": "https://matwprojectusa.org/static/media/orphanFeast5.e584eb31ef3db50f0fd9.jpg",
+    "location": "Al-Amin Orphanage, Muradpur",
+    "date": "2026-03-05T12:00:00.000Z",
+    "creatorEmail": "feedkids@ctg.org"
+  }
+]
