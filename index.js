@@ -7,10 +7,6 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 // middleware
 app.use(cors());
 app.use(express.json());
-//
-// app.get("/", (req, res) => {
-//   res.send("helllo brother");
-// });
 
 // mongodb
 // greendb
@@ -58,14 +54,15 @@ async function run() {
     // post api
     app.post("/events", async (req, res) => {
       const data = req.body;
-      console.log(data);
+      // console.log(data);
       const result = await eventsCollection.insertOne(data);
       res.send(result);
+      // console.log(result);
     });
 
     app.post("/joined-events", async (req, res) => {
       try {
-        const { eventId, userEmail } = req.body;
+        const { eventId, userEmail, thumbnail, type, title } = req.body;
         if (!eventId || !userEmail) {
           return res
             .status(400)
@@ -92,6 +89,9 @@ async function run() {
         const result = await joinedEventCollection.insertOne({
           eventId: new ObjectId(eventId),
           userEmail,
+          thumbnail,
+          type,
+          title,
           joinedAt: new Date(),
         });
         res.status(201).json({
@@ -103,6 +103,19 @@ async function run() {
         console.error("Join error:", error);
         res.status(500).json({ message: "Server error" });
       }
+    });
+
+    // api for joinedd event page by user email.
+    app.get("/my-joined-events", async (req, res) => {
+      const email = req.query.email;
+      const result = await joinedEventCollection
+        .find({
+          userEmail: email,
+        })
+        .sort({ date: 1 })
+        .toArray();
+
+      res.send(result);
     });
 
     // Send a ping to confirm a successful connection
