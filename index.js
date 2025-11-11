@@ -62,7 +62,7 @@ async function run() {
 
     app.post("/joined-events", async (req, res) => {
       try {
-        const { eventId, userEmail, thumbnail, type, title } = req.body;
+        const { eventId, userEmail, thumbnail, type, title, date } = req.body;
         if (!eventId || !userEmail) {
           return res
             .status(400)
@@ -92,6 +92,7 @@ async function run() {
           thumbnail,
           type,
           title,
+          date,
           joinedAt: new Date(),
         });
         res.status(201).json({
@@ -116,6 +117,15 @@ async function run() {
         .toArray();
 
       res.send(result);
+    });
+    // API for manage events page
+    app.get("/manage-event", async (req, res) => {
+      const email = req.query.email;
+      const result = await eventsCollection
+        .find({ creatorEmail: email })
+        .toArray();
+      res.send(result);
+      console.log(result);
     });
 
     // Send a ping to confirm a successful connection
