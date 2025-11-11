@@ -2,15 +2,15 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const cors = require("cors");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
 // middleware
 app.use(cors());
 app.use(express.json());
 //
-app.get("/", (req, res) => {
-  res.send("helllo brother");
-});
+// app.get("/", (req, res) => {
+//   res.send("helllo brother");
+// });
 
 // mongodb
 // greendb
@@ -40,6 +40,17 @@ async function run() {
     app.get("/events", async (req, res) => {
       const result = await eventsCollection.find().sort({ date: 1 }).toArray();
       res.send(result);
+    });
+
+    // get api by findOne
+    app.get("/events/:id", async (req, res) => {
+      const { id } = req.params;
+      const result = await eventsCollection.findOne({ _id: new ObjectId(id) });
+      console.log(id);
+      res.send({
+        success: true,
+        result,
+      });
     });
 
     // post api
