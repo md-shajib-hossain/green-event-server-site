@@ -35,6 +35,8 @@ async function run() {
     //
     const db = client.db("events_db");
     const eventsCollection = db.collection("events");
+    // join event collection
+    const joinedEventCollection = db.collection("joinedEvents");
 
     // get api
     app.get("/events", async (req, res) => {
@@ -59,6 +61,48 @@ async function run() {
       console.log(data);
       const result = await eventsCollection.insertOne(data);
       res.send(result);
+    });
+
+    app.post("/joined-events", async (req, res) => {
+      try {
+        const { eventId, userEmail } = req.body;
+        if (!eventId || !userEmail) {
+          return res
+            .status(400)
+            .json({ message: "Event Id and User email required" });
+        }
+        const event = await eventsCollection.findOne({
+          _id: new ObjectId(eventId),
+        });
+        if (!event) {
+          return res.status(404).json({ message: "Event not found" });
+        }
+
+        const alreadyJoined = await joinedEventCollection.findOne({
+          eventId: new ObjectId(eventId),
+          userEmail,
+        });
+
+        if (alreadyJoined) {
+          return res
+            .status(400)
+            .json({ message: "You already joined this event" });
+        }
+
+        const result = await joinedEventCollection.insertOne({
+          eventId: new ObjectId(eventId),
+          userEmail,
+          joinedAt: new Date(),
+        });
+        res.status(201).json({
+          success: true,
+          message: "Successfully joined the event!",
+          joinedId: result.insertedId,
+        });
+      } catch (error) {
+        console.error("Join error:", error);
+        res.status(500).json({ message: "Server error" });
+      }
     });
 
     // Send a ping to confirm a successful connection
