@@ -27,7 +27,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
     //
     const db = client.db("events_db");
     const eventsCollection = db.collection("events");
@@ -40,7 +40,7 @@ async function run() {
       res.send(result);
     });
 
-    // get api by findOne
+    // get api by findOne for event detail page........
     app.get("/events/:id", async (req, res) => {
       const { id } = req.params;
       const result = await eventsCollection.findOne({ _id: new ObjectId(id) });
@@ -123,6 +123,51 @@ async function run() {
       const email = req.query.email;
       const result = await eventsCollection
         .find({ creatorEmail: email })
+        .toArray();
+      res.send(result);
+    });
+
+    //  Update Event get api ...
+
+    app.get("/update-event/:id", async (req, res) => {
+      const { id } = req.params;
+      const result = await eventsCollection.findOne({ _id: new ObjectId(id) });
+      res.send({
+        success: true,
+        result,
+      });
+    });
+
+    // Update event put/patch api
+    app.patch("/events/:id", async (req, res) => {
+      const { id } = req.params;
+      const data = req.body;
+      console.log(data);
+      const objectId = new ObjectId(id);
+
+      const result = await eventsCollection.updateOne(
+        { _id: new ObjectId(id) },
+        { $set: data }
+      );
+      // res.send(result);
+      if (result.matchedCount === 0) {
+        return res.status(404).json({ message: "Event not found" });
+      }
+
+      // শুধু দরকারি ডেটা পাঠাও
+      res.status(200).json({
+        success: true,
+        message: "Event updated successfully",
+        modifiedCount: result.modifiedCount,
+        matchedCount: result.matchedCount,
+      });
+    });
+
+    //  search api
+    app.get("/search", async (req, res) => {
+      const search_text = req.query.search;
+      const result = await eventsCollection
+        .find({ title: { $regex: search_text, $options: "i" } })
         .toArray();
       res.send(result);
       console.log(result);
