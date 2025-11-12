@@ -173,6 +173,16 @@ async function run() {
       console.log(result);
     });
 
+    // filter event by type ...
+    app.get("/filter", async (req, res) => {
+      const filter_text = req.query.filter;
+      const result = await eventsCollection
+        .find({ type: filter_text })
+        .toArray();
+      res.send(result);
+      console.log(result);
+    });
+
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
     console.log(
