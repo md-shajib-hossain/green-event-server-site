@@ -176,9 +176,11 @@ async function run() {
     // filter event by type ...
     app.get("/filter", async (req, res) => {
       const filter_text = req.query.filter;
-      const result = await eventsCollection
-        .find({ type: filter_text })
-        .toArray();
+      let query = {};
+      if (filter_text && filter_text !== "All") {
+        query = { type: filter_text };
+      }
+      const result = await eventsCollection.find(query).toArray();
       res.send(result);
       console.log(result);
     });
